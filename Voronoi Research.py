@@ -26,7 +26,8 @@ nx.draw(G);
 print(nx.info(G))
 
 
-# Below is the process that takes graph G and returns lists 'sortedpost1' and 'sortedpost2', lists of nodes in the supposedly-optimal partitions. I print the actions of each turn to check it against my manual partitioning.
+# Below is the process that takes graph G and returns lists 'sortedpost1' and 'sortedpost2', lists of nodes in the supposedly-optimal partitions.
+# I print the actions of each turn to check it against my manual partitioning.
 
 
 
@@ -133,7 +134,8 @@ def calcDisparity(listA,listB):
 calcDisparity(sortedpost1,sortedpost2)
 
 
-# Below is the search for counterexamples. We randomly partition G and print any better metrics from only the contiguous node lists. This is promising but not extensive.
+# Below is the search for counterexamples. We randomly partition G and print any better metrics from only the contiguous node lists.
+# This is promising but not extensive.
 
 
 
