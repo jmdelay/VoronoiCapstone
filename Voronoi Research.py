@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
 
 
 import pandas as pd
@@ -12,19 +11,16 @@ import random
 import statistics
 
 
-# In[2]:
 
 
 G= nx.read_edgelist('edgelist.txt')
 
 
-# In[3]:
 
 
 nx.draw(G);
 
 
-# In[4]:
 
 
 print(nx.info(G))
@@ -32,7 +28,6 @@ print(nx.info(G))
 
 # Below is the process that takes graph G and returns lists 'sortedpost1' and 'sortedpost2', lists of nodes in the supposedly-optimal partitions. I print the actions of each turn to check it against my manual partitioning.
 
-# In[5]:
 
 
 # ALGORITHM
@@ -88,7 +83,6 @@ while (vol1+vol2)<231:
         sortedpre2 = np.delete(sortedpre2,0,)
 
 
-# In[6]:
 
 
 #make subgraphs
@@ -98,7 +92,6 @@ subg1 = G.subgraph(subset1)
 subg2 = G.subgraph(subset2)
 
 
-# In[7]:
 
 
 print(nx.info(subg1))
@@ -107,7 +100,6 @@ print(nx.info(subg2))
 
 # Now we can calulate impedance . . .
 
-# In[8]:
 
 
 def calcImpedance(listA, listB):
@@ -130,7 +122,6 @@ calcImpedance(sortedpost1,sortedpost2)
 
 # . . . and disparity.
 
-# In[10]:
 
 
 def calcDisparity(listA,listB):
@@ -144,7 +135,6 @@ calcDisparity(sortedpost1,sortedpost2)
 
 # Below is the search for counterexamples. We randomly partition G and print any better metrics from only the contiguous node lists. This is promising but not extensive.
 
-# In[11]:
 
 
 def makeRandomG(G):
@@ -154,7 +144,6 @@ def makeRandomG(G):
     return list1, list2
 
 
-# In[14]:
 
 
 def main():
@@ -171,9 +160,6 @@ def main():
             if(disp<1):
                 print(imped,disp)
 main()
-
-
-# In[ ]:
 
 
 
